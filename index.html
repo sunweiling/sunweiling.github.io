@@ -45,7 +45,8 @@ var main = new Vue({
 				e_name: "About",
 				show: false
 			}],
-			check_menu: 0
+			check_menu: 0,
+			main_click: 0
 		}
 	},
 	methods: {
@@ -55,7 +56,16 @@ var main = new Vue({
 			}
 			this.menu[index].show = true;
 			this.check_menu = index;
-		}
+			if(this.check_menu == 0){
+				var refs = this.$children;
+				this.main_click ++;
+				if(this.main_click > 1) return;
+				refs[0].show_keys();
+			}
+		},
+	},
+	mounted:function(){
+		this.show(0);
 	}
 })
 </script>
