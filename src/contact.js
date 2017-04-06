@@ -3,7 +3,7 @@ Vue.component('v-contact', {
 		<div class="other">
 			<div class="o-bg">
 				<h1 style="margin-top:40px;">{{title}}</h1>
-				<h3>{{info}}</h3>
+				<h3>{{info}}／{{mail}}</h3>
 				<div class="o-con">
 					<div v-for="(_message, _t) of message">
 						<a :href="_message.href" target="_blank"><img :src="_message.pic"/></a>
@@ -34,12 +34,10 @@ Vue.component('v-contact', {
 					pic: "./img/github.jpg",
 					href: "https://github.com/sunweiling"
 				}
-			}
+			},
+			mail:"317764217@qq.com"
 
 		}
 		return data
-	},
-	methods:{
-		
 	}
 });
