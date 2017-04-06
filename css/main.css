@@ -32,7 +32,7 @@ header a{
     margin-left: 20px;
 }
 header a:hover{
-	color: red;
+	color: #e74c4c;
 	cursor: pointer;
 }
 .check_menu{
@@ -61,5 +61,13 @@ header a:hover{
     background: #000;
     opacity: 0.4;
     z-index: 0;
-
+}
+.other{
+    margin-top:60px;
+    border-top: 1px solid #eee
+}
+.other .o-bg{
+    width: 1120px;
+    margin: 0 auto;
+    text-align: center;
 }

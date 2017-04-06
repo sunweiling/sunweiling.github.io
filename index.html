@@ -10,13 +10,19 @@
 	<div id="main">
 		<header>
 			<div v-for="(_menu ,index) of menu" :class="{'check_menu': index == check_menu}">
-				<a href="">{{_menu.name}}／{{_menu.e_name}}</a>
+				<a href="#" @click="show(index)">{{_menu.name}}／{{_menu.e_name}}</a>
 			</div>
 		</header>
-		<div class="bg" style='background-image: url("img/bg.jpeg");'></div>
-		<div class="cover"></div>
+		<v-home :show="menu[0].show"></v-home>
+		<v-article :show="menu[1].show"></v-article>
+		<v-contact :show="menu[2].show"></v-contact>
+		<v-about :show="menu[3].show"></v-about>
 	</div>
 </body>
+<script src="src/home.js" type="text/javascript"></script>
+<script src="src/article.js" type="text/javascript"></script>
+<script src="src/contact.js" type="text/javascript"></script>
+<script src="src/about.js" type="text/javascript"></script>
 <script type="text/javascript">
 var main = new Vue({
 	el: "#main",
@@ -25,21 +31,30 @@ var main = new Vue({
 			menu:[{
 				name: "首页",
 				e_name: "Home",
-				url: ""
+				show: true
 			},{
 				name: "文章",
 				e_name: "Article",
-				url: ""
+				show: false
 			},{
 				name: "联系我",
 				e_name: "Contact",
-				url: ""
+				show: false
 			},{
 				name: "关于",
 				e_name: "About",
-				url: ""
+				show: false
 			}],
 			check_menu: 0
+		}
+	},
+	methods: {
+		show: function(index){
+			for(var i in this.menu){
+				this.menu[i].show = false
+			}
+			this.menu[index].show = true;
+			this.check_menu = index;
 		}
 	}
 })
