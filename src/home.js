@@ -20,7 +20,7 @@ Vue.component('v-home', {
 		var data = {
 			check: -1,
 			check_last: -1,
-			bg_src: "background-image: url('img/bg.jpeg')",
+			bg_src: "background-image: url('img/bg.jpg')",
 			keys: ["早睡早起","常做运动"],
 			keys_last: ["多","与","异","性","交","朋","友"],
 			show_key: [],
